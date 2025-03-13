@@ -1,0 +1,85 @@
+import { Button } from '@mantine/core';
+import { IconHeartFilled } from '@tabler/icons-react';
+import { FrameworksGuides } from '@/components/FrameworksGuides';
+import { SocialCards } from '@/components/SocialCards';
+import { Layout } from '@/layout';
+import { MDX_DATA } from '@/mdx';
+
+export default Layout(MDX_DATA.PaymentsGateway);
+
+# Payments Gateway
+
+## Feature overview
+
+<KeyFeatures />
+
+## Providers
+
+Here are just a few of the payment providers we currently have integrated:
+
+<IntegratedProviders />
+
+Additional providers can also be integrated rapidly where needed. 
+
+## Integration Overview
+
+<IntegrationSteps />
+
+## Create a payment session
+
+> **You will need**
+> - An API Key
+> - The URL of your BookieBase instance ([https://staging.bookiebase.ie/api/](https://staging.bookiebase.ie/api/) for staging)
+> - In production, you will need to ask us to whitelist your IP addresses from which API requests can be made.
+
+Create a new payment session via a `POST` request to the `/payment_sessions` endpoint:
+
+```python
+import requests
+
+res = requests.post(
+    "https://staging.bookiebase.ie/api/payment_sessions",
+    headers={"Authorization": "Token [YOUR_API_KEY]"},
+    json={
+        "customer": {
+            "unique_id": "123",         # Unique customer identifier
+            "first_name": "John",
+            "last_name": "Jones",
+        },
+        "payment": {
+            "unique_id": "P-0001",      # Your unique identifier for the session
+            "payment_type": "DEPOSIT",  # DEPOSIT or WITHDRAWAL
+            "amount_cents": "1000",     # £10
+            "currency": "GBP",
+        },
+        "session_config": {
+            "success_redirect_url": "https://yoursite.com/payment/result",
+            "failure_redirect_url": "https://yoursite.com/payment/result",
+            "webhook_url": "https://api.yoursite.com/webhooks",
+        },
+    },
+)
+
+result = res.json()     # { "payment_session": { "url": "https://staging.bookiebase.ie/payment/[PAYMENT_SESSION_UUID]" } }
+
+```
+
+## Embedding the Payment Session
+
+Redirect the customer to the payment session url or embed the hosted payments page in an iframe:
+
+```html
+<iframe
+    src="https://staging.bookiebase.ie/payment/[PAYMENT_SESSION_UUID]"
+></iframe>
+```
+
+## Handle Session Result
+
+If the session results in a successful payment, we will redirect the customer to the
+specified `success_redirect_url`. If the session is cancelled or fails, we will redirect the
+customer to the `failure_redirect_url`.
+
+## Webhooks
+
+Dood

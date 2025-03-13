@@ -10,7 +10,7 @@ export function ContentPageBase({ title, ...others }: ContentPageBaseProps) {
   return (
     <>
       <Head>
-        <title>{`${title} | Mantine`}</title>
+        <title>{`${title} | BookieBase`}</title>
       </Head>
       <PageBase>
         <PageContentContainer {...others} />

@@ -13,7 +13,7 @@ interface MdxLayoutProps {
 }
 
 export function MdxLayout({ meta, children }: MdxLayoutProps) {
-  const title = `${meta.title} | Mantine`;
+  const title = `${meta.title} | BookieBase`;
   return (
     <>
       <Head>

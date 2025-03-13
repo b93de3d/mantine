@@ -6,10 +6,10 @@ interface PageHeadProps {
 }
 
 const metaDescription =
-  'React components and hooks library with native dark theme support and focus on usability, accessibility and developer experience';
+  'Payment processing, messaging, compliance and reporting solutions for small to medium sized bookmakers.';
 
 export function PageHead({ title, description }: PageHeadProps) {
-  const _title = title ? `${title} | Mantine` : 'Mantine';
+  const _title = title ? `${title} | BookieBase` : 'BookieBase';
   const _description = description || metaDescription;
   return (
     <Head>

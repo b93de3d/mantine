@@ -59,7 +59,7 @@ export function Header({ navbarOpened, onNavbarToggle, headerControlsProps }: He
           </Menu> */}
         </div>
 
-        <div></div>
+        <ColorSchemeControl />
         {/* <HeaderControls
           className={classes.controls}
           onSearch={searchHandlers.open}
@@ -83,7 +83,7 @@ export function Header({ navbarOpened, onNavbarToggle, headerControlsProps }: He
           <Logo />
 
           <Group gap={5}>
-            <SearchMobileControl onSearch={searchHandlers.open} />
+            {/* <SearchMobileControl onSearch={searchHandlers.open} /> */}
             <ColorSchemeControl />
           </Group>
         </Group>

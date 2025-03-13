@@ -60,7 +60,7 @@ export const IntegratedProviders = () => (
       '/docs/paydotcom.svg',
       '/docs/aibms.png',
     ].map((src) => (
-      <Paper p="md" h={90} bg="primary.0">
+      <Paper p="md" h={90} bg="indigo.0">
         <img
           src={src}
           style={{ filter: 'grayscale(100%)', maxWidth: 150, objectFit: 'contain' }}

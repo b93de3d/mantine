@@ -10,7 +10,8 @@ export function Logo(props: MantineLogoProps) {
       <VisuallyHidden>
         Welcome to Mantine, React components library that you always wished for
       </VisuallyHidden>
-      <MantineLogo size={30} {...props} />
+      <img src="/bb-black.svg" height={props.height} />
+      {/* <MantineLogo size={30} {...props} /> */}
     </Link>
   );
 }

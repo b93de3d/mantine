@@ -65,15 +65,15 @@
   }
 
   &[data-active] {
-    border-color: var(--mantine-color-blue-5);
+    border-color: var(--mantine-color-indigo-5);
 
     @mixin light {
-      color: var(--mantine-color-blue-8);
-      background-color: var(--mantine-color-blue-0);
+      color: var(--mantine-color-indigo-8);
+      background-color: var(--mantine-color-indigo-0);
     }
 
     @mixin dark {
-      color: var(--mantine-color-blue-1);
+      color: var(--mantine-color-indigo-1);
       background-color: rgba(24, 100, 171, 0.45);
     }
   }

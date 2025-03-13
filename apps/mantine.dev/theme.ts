@@ -1,6 +1,7 @@
 import { createTheme, DEFAULT_THEME, virtualColor } from '@mantine/core';
 
 export const theme = createTheme({
+  primaryColor: 'indigo',
   fontFamilyMonospace: `Menlo, Monaco, ${DEFAULT_THEME.fontFamilyMonospace}`,
   colors: {
     virtual: virtualColor({ name: 'virtual', dark: 'pink', light: 'cyan' }),

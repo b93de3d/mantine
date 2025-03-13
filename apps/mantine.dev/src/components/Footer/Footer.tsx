@@ -2,6 +2,7 @@ import cx from 'clsx';
 import { Box, Container, Group, RemoveScroll, Text } from '@mantine/core';
 import { Logo } from '../Logo/Logo';
 import { DiscordButton, TwitterButton } from '../SocialButton';
+import { LinkedinButton } from '../SocialButton/SocialButton';
 import { FOOTER_LINKS_DATA } from './data';
 import { LinksGroup } from './LinksGroup/LinksGroup';
 import classes from './Footer.module.css';
@@ -27,23 +28,21 @@ export function Footer({ withNavbar }: FooterProps) {
             <div className={classes.logoSection}>
               <Logo />
               <Text className={classes.description} fz="sm">
-                Build fully functional accessible web applications faster than ever
+                The complete bookmaker solution
               </Text>
             </div>
 
-            <div className={classes.groups}>{groups}</div>
+            {/* <div className={classes.groups}>{groups}</div> */}
           </div>
 
           <div className={classes.afterFooter}>
             <Group justify="space-between" wrap="wrap">
               <Text fz="xs" className={classes.afterFooterNote}>
-                Built by <a href="https://github.com/rtivital">Vitaly Rtishchev</a> and{' '}
-                <a href="https://github.com/mantinedev/mantine/graphs/contributors">
-                  these awesome people
-                </a>
+                © BookieBase Limited {new Date().getFullYear()}
               </Text>
               <div className={classes.social}>
-                <DiscordButton className={classes.socialButton} />
+                {/* <DiscordButton className={classes.socialButton} /> */}
+                {/* <LinkedinButton className={classes.socialButton} /> */}
                 <TwitterButton className={classes.socialButton} />
               </div>
             </Group>

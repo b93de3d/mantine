@@ -1,3 +1,4 @@
+import { IconBrandLinkedin } from '@tabler/icons-react';
 import cx from 'clsx';
 import { BoxProps, Button, ElementProps } from '@mantine/core';
 import { DiscordIcon, XIcon } from '@mantinex/dev-icons';
@@ -38,15 +39,28 @@ export function DiscordButton({ className, ...others }: SocialButtonProps) {
   );
 }
 
+export function LinkedinButton({ className, ...others }: SocialButtonProps) {
+  return (
+    <SocialButton
+      className={cx(classes.discordButton, className)}
+      icon={<IconBrandLinkedin size={16} />}
+      href="https://www.linkedin.com/company/bookiebase/"
+      {...others}
+    >
+      View us on Linkedin
+    </SocialButton>
+  );
+}
+
 export function TwitterButton({ className, ...others }: SocialButtonProps) {
   return (
     <SocialButton
       className={cx(classes.xButton, className)}
       icon={<XIcon size={16} />}
-      href={meta.twitterLink}
+      href="https://x.com/BookieBase_/"
       {...others}
     >
-      Follow Mantine on X
+      Follow BookieBase on X
     </SocialButton>
   );
 }

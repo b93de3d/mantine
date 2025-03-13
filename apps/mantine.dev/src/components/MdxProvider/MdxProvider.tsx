@@ -2,6 +2,12 @@ import { MDXProvider } from '@mdx-js/react';
 import { Demo } from '@mantinex/demo';
 import { MdxDataTable } from './MdxDataTable/MdxDataTable';
 import { MdxExamplesButton } from './MdxExamplesButton/MdxExamplesButton';
+import {
+  IntegratedProviders,
+  IntegrationSteps,
+  KeyFeatures,
+  NewSessionRequirements,
+} from './MdxGatewayCustom/MdxGatewayCustom';
 import { MdxInfo } from './MdxInfo/MdxInfo';
 import { MdxInstallScript } from './MdxInstallScript/MdxInstallScript';
 import { MdxKeyboardEventsTable } from './MdxKeyboardEventsTable/MdxKeyboardEventsTable';
@@ -37,6 +43,10 @@ export function MdxProvider({ children }: { children: React.ReactNode }) {
   return (
     <MDXProvider
       components={{
+        KeyFeatures: KeyFeatures,
+        IntegratedProviders: IntegratedProviders,
+        IntegrationSteps: IntegrationSteps,
+        NewSessionRequirements: NewSessionRequirements,
         Demo,
         GetElementRef: MdxGetElementRef,
         Polymorphic: MdxPolymorphic,

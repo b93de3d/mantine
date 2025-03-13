@@ -20,7 +20,7 @@ function getLanguage(children: any) {
     return 'scss';
   }
 
-  if (['html', 'bash', 'json'].includes(matchedLanguage)) {
+  if (['html', 'bash', 'json', 'python'].includes(matchedLanguage)) {
     return matchedLanguage;
   }
 

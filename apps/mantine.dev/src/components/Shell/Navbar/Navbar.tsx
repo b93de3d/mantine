@@ -4,6 +4,8 @@ import {
   IconCompass,
   IconHeartHandshake,
   IconHelp,
+  IconHome,
+  IconMoneybag,
   IconPalette,
 } from '@tabler/icons-react';
 import cx from 'clsx';
@@ -34,14 +36,21 @@ export function Navbar({ navbarOpened, onNavbarClose, mobileNavbarOnly }: Navbar
     >
       <ScrollArea className={classes.scrollarea} type="never" offsetScrollbars={false}>
         <div className={classes.body}>
-          <NavbarMainLink
-            icon={<IconCompass style={{ width: rem(25), height: rem(25) }} stroke={1.5} />}
-            href="/getting-started"
+          {/* <NavbarMainLink
+            icon={<IconHome style={{ width: rem(25), height: rem(25) }} stroke={1.5} />}
+            href="/"
             onNavbarClose={onNavbarClose}
           >
-            Getting started
-          </NavbarMainLink>
+            Home
+          </NavbarMainLink> */}
           <NavbarMainLink
+            icon={<IconMoneybag style={{ width: rem(25), height: rem(25) }} stroke={1.5} />}
+            href="/payments-gateway"
+            onNavbarClose={onNavbarClose}
+          >
+            Payments Gateway
+          </NavbarMainLink>
+          {/* <NavbarMainLink
             icon={<IconBrandMantine style={{ width: rem(25), height: rem(25) }} stroke={1.5} />}
             href="/about"
             onNavbarClose={onNavbarClose}
@@ -84,8 +93,8 @@ export function Navbar({ navbarOpened, onNavbarClose, mobileNavbarOnly }: Navbar
             onNavbarClose={onNavbarClose}
           >
             Mantine UI
-          </NavbarMainLink>
-          <div className={classes.groups}>{groups}</div>
+          </NavbarMainLink> */}
+          {/* <div className={classes.groups}>{groups}</div> */}
         </div>
       </ScrollArea>
     </Box>

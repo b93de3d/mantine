@@ -25,6 +25,14 @@ export const MDX_META_DATA: Record<string, Frontmatter> = {
     hideHeader: true,
   },
 
+  PaymentsGateway: {
+    title: 'Payments Gateway',
+    search: 'BookieBase Payments Gateway',
+    slug: '/payments-gateway',
+    hideSiblings: true,
+    hideHeader: true,
+  },
+
   TemplatesUsage: {
     title: 'Getting started with a template',
     slug: '/templates-usage',

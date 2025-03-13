@@ -36,8 +36,16 @@ export function Header({ navbarOpened, onNavbarToggle, headerControlsProps }: He
     <>
       <header className={cx(classes.header, RemoveScroll.classNames.fullWidth)} data-desktop>
         <div className={classes.logo}>
-          <Logo />
-          <Menu width={180} withinPortal={false}>
+          <div
+            style={{
+              width: 245,
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <Logo />
+          </div>
+          {/* <Menu width={180} withinPortal={false}>
             <Menu.Target>
               <UnstyledButton>
                 <Code fw="bold" className={classes.version}>
@@ -48,16 +56,17 @@ export function Header({ navbarOpened, onNavbarToggle, headerControlsProps }: He
             </Menu.Target>
 
             <Menu.Dropdown>{versionItems}</Menu.Dropdown>
-          </Menu>
+          </Menu> */}
         </div>
 
-        <HeaderControls
+        <div></div>
+        {/* <HeaderControls
           className={classes.controls}
           onSearch={searchHandlers.open}
           githubLink="https://github.com/mantinedev/mantine"
           discordLink={meta.discordLink}
           {...headerControlsProps}
-        />
+        /> */}
       </header>
 
       <header className={cx(classes.header, RemoveScroll.classNames.fullWidth)} data-mobile>

@@ -11,6 +11,10 @@ servers:
       ssl: true
       forward_headers: true
       app_port: 80
+      healthcheck:
+        interval: 1
+        path: /
+        timeout: 5
 
 registry:
   server: registry.digitalocean.com

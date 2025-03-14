@@ -51,7 +51,7 @@ ____test.*
 apps/help.mantine.dev/out
 apps/mantine.dev/components/___test.internal.tsx
 apps/mantine.dev/.cache
-apps/mantine.dev/out
+# apps/mantine.dev/out
 apps/mantine.dev/.next
 apps/mantine.dev/src/.docgen/
 .samples

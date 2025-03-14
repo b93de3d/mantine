@@ -1,0 +1,22 @@
+service: bb_docs
+
+image: bookiebase/bb_docs
+
+servers:
+  web:
+    hosts:
+      - core.bookiebase.ie
+    proxy:
+      host: docs.bookiebase.ie
+      ssl: true
+      forward_headers: true
+      app_port: 80
+
+registry:
+  server: registry.digitalocean.com
+  username: rowan@4e76a5ed.net
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+aliases:
+  shell: app exec --interactive --reuse "/bin/sh"

@@ -35,6 +35,8 @@ Additional providers can also be integrated rapidly where needed.
 Create a new payment session via a `POST` request to the `/payment_sessions` endpoint:
 
 ```python
+# Python Example
+
 import requests
 
 res = requests.post(
@@ -74,6 +76,8 @@ Redirect the customer to the payment session url or embed the hosted payments pa
 ></iframe>
 ```
 
+Try it out: [Gateway Embedding Example](https://eg.gateway.bookiebase.ie/)
+
 ## Handle Session Result
 
 If the session results in a successful payment, we will redirect the customer to the
@@ -82,4 +86,24 @@ customer to the `failure_redirect_url`.
 
 ## Webhooks
 
-Dood
+A webhook event will be sent to the configured `webhook_url` each time the payment sessions
+status changes.
+
+Webhooks are sent as `POST` requests to the specified `webhook_url`. The body of the request 
+
+Once decoded, the content of the webhook request will be as follows:
+
+```json
+{
+  "payment_session": {
+    "uuid": "611748d8-8d3a-4066-a72a-1fd24c72dff1",
+    "customer": { "account_id": "9999G", "currency": "GBP" },
+    "order_reference": "B4KFoQ2Ufk",
+    "payment_type": "DEPOSIT",
+    "amount_cents": 1000,
+    "payment": {
+        "status": "COMPLETE" # CREATED | COMPLETE | FAILED,
+    },
+  }
+}
+```

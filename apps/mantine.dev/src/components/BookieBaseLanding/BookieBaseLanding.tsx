@@ -31,11 +31,11 @@ const PromoItem = ({
         <ThemeIcon variant="gradient" radius="xl" size="3rem">
           <Icon size="1.5rem" />
         </ThemeIcon>
-        <Title order={3} ta="center" c={theme.colors.dark[6]}>
+        <Title order={3} ta="center">
           {title}
         </Title>
       </Group>
-      <Text fw={500} c={theme.colors.dark[6]} ta="justify">
+      <Text fw={500} ta="justify">
         {description}
       </Text>
     </Stack>
@@ -89,10 +89,10 @@ const BookieBaseLanding = () => {
             <Container>
               {/* <Center></Center> */}
               <Stack gap={30}>
-                <Title c={primaryColors[0]} fz={{ base: '3em', md: '2.1em' }}>
+                <Title c={primaryColors[0]} fz={{ base: '2.1em', md: '3em' }}>
                   The Complete Bookmaker Solution
                 </Title>
-                <Text c={primaryColors[0]} fz={{ base: '1.3em', md: '1em' }}>
+                <Text c={primaryColors[0]} fz={{ base: '1em', md: '1.3em' }}>
                   Simple yet powerful, BookieBase is a complete software solution for small to
                   medium sized bookmakers
                 </Text>
@@ -115,10 +115,8 @@ const BookieBaseLanding = () => {
           <Grid align="stretch">
             <Grid.Col span={12}>
               <Stack>
-                <Title order={2} c={theme.colors.dark[6]}>
-                  The Case for BookieBase
-                </Title>
-                <Text c={theme.colors.dark[6]} ta="justify">
+                <Title order={2}>The Case for BookieBase</Title>
+                <Text ta="justify">
                   BookieBase is a complete software solution for small to medium sized bookmakers.
                   It is an ideal system for telephone and text betting operations and boutique firms
                   processing a relatively small number of bets. It is designed to work with or

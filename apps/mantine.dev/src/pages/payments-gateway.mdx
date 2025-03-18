@@ -89,9 +89,10 @@ customer to the `failure_redirect_url`.
 A webhook event will be sent to the configured `webhook_url` each time the payment sessions
 status changes.
 
-Webhooks are sent as `POST` requests to the specified `webhook_url`. The body of the request 
-
-Once decoded, the content of the webhook request will be as follows:
+Webhooks are sent as POST requests to the specified `webhook_url`.
+The body of the request contains JWT encoded data as a UTF-8 string.
+This data should be decoded using the HS256 algorithm with your webhook secret as a key.
+The resulting JSON object contains the updated payment session:
 
 ```json
 {
@@ -102,8 +103,35 @@ Once decoded, the content of the webhook request will be as follows:
     "payment_type": "DEPOSIT",
     "amount_cents": 1000,
     "payment": {
-        "status": "COMPLETE" # CREATED | COMPLETE | FAILED,
+        "status": "COMPLETE" # PENDING | COMPLETE | FAILED,
     },
   }
 }
 ```
+
+```python
+# Python Example
+
+import jwt
+
+WEBHOOK_SECRET = "INSERT_WEBHOOK_SECRET"
+
+def handle_webhook(self, request):
+    decoded_data = jwt.decode(
+        jwt=request.body.decode("utf-8"),
+        key=WEBHOOK_SECRET,
+        algorithms=["HS256"],
+    )
+    print(decoded_data["payment_session"]["uuid"])
+    return ...
+```
+
+> **Webhook Retries**
+> 
+> If we do not receive a HTTP Status 200 response from the configured webhook endpoint within 10 seconds, 
+> the request will be considered to have failed. We will retry the webhook up to the specified number of
+> `max_webhook_retries`. We strongly advise that you put in place handing of duplicate notifications, 
+> in case of unexpected errors occurring on either side.
+
+
+

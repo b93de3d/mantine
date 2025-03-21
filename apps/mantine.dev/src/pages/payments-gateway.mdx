@@ -29,8 +29,8 @@ Additional providers can also be integrated rapidly where needed.
 
 > **You will need**
 > - An API Key
-> - The URL of your BookieBase instance ([https://staging.bookiebase.ie/api/](https://staging.bookiebase.ie/api/) for staging)
-> - In production, you will need to ask us to whitelist your IP addresses from which API requests can be made.
+> - The URL of your BookieBase instance (e.g. https://yourbrand.bookiebase.ie/api/)
+> - In production, you will need to ask us to whitelist the IP addresses from which API requests are made
 
 Create a new payment session via a `POST` request to the `/payment_sessions` endpoint:
 
@@ -40,7 +40,7 @@ Create a new payment session via a `POST` request to the `/payment_sessions` end
 import requests
 
 res = requests.post(
-    "https://staging.bookiebase.ie/api/payment_sessions",
+    "https://yourbrand.bookiebase.ie/api/payment_sessions",
     headers={"Authorization": "Token [YOUR_API_KEY]"},
     json={
         "customer": {
@@ -62,7 +62,7 @@ res = requests.post(
     },
 )
 
-result = res.json()     # { "payment_session": { "url": "https://staging.bookiebase.ie/payment/[PAYMENT_SESSION_UUID]" } }
+result = res.json()     # { "payment_session": { "url": "https://yourbrand.bookiebase.ie/payment/[PAYMENT_SESSION_UUID]" } }
 
 ```
 
@@ -72,7 +72,7 @@ Redirect the customer to the payment session url or embed the hosted payments pa
 
 ```html
 <iframe
-    src="https://staging.bookiebase.ie/payment/[PAYMENT_SESSION_UUID]"
+    src="https://yourbrand.bookiebase.ie/payment/[PAYMENT_SESSION_UUID]"
 ></iframe>
 ```
 

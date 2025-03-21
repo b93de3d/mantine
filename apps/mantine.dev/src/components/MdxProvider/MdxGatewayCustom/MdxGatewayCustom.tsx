@@ -78,13 +78,13 @@ export const IntegrationSteps = () => (
     <Stepper.Step
       completedIcon={<IconApi />}
       label="Create a payment session"
-      description={<>Use our API to create a new payments session</>}
+      description={<>Use our API to create a new payment session</>}
     />
     <Stepper.Step
       completedIcon={<IconDeviceLaptop />}
       label="Display the payments page"
       description={
-        <>Embed our payments portal in an iframe or direct the customer to our hosted solution</>
+        <>Embed our payments portal in an iframe or redirect the customer to our hosted page</>
       }
     />
     <Stepper.Step
